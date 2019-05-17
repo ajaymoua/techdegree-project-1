@@ -40,7 +40,7 @@ var quotes = [
   }
 ];
 
-//function generating inclusive 0 to array length of exclusive 6
+//function generating inclusive 0 to array length of exclusive 6 returning one random object from the array
 function getRandomQuote(){ 
   
   var random = Math.floor(Math.random() * (quotes.length));  
@@ -49,7 +49,7 @@ function getRandomQuote(){
   
 };
 
-//print function retrieving random object and properties from quotes array and printing to site
+//print function retrieving random object and properties from quotes array and outputs the html 'string'
 function printQuote(){
   
   var get = getRandomQuote();  
@@ -61,7 +61,7 @@ function printQuote(){
       if(get.year){ //if year is true, retrieve
         string += '<span class="year">' + get.year + '</span>';
       }
-        string += '</p>'; //if not, by default its just the string @line 56 + closing 'p' tag
+        string += '</p>'; //if not, its just the string @line 56 + closing 'p' tag
               
           document.getElementById('quote-box').innerHTML = string; 
 
