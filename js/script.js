@@ -70,10 +70,8 @@ function printQuote(){
 }; 
 
 
-printQuote();
+printQuote(); //run the function
 
 
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false); //button
 
-
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
