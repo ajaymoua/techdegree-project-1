@@ -18,7 +18,7 @@ var quotes = [
   {
     quote:'You sit on a throne of lies', 
     source:'Buddy the Elf', 
-    citation:'Elf', 
+    citation:'Elf' 
     //year: 2003 commented out to test citation without year
   },
   {
@@ -52,14 +52,14 @@ function getRandomQuote(){
 //print function retrieving random object and properties from quotes array and outputs the html 'string'
 function printQuote(){
   
-  var get = getRandomQuote();  
-  var string = '<p class = "quote">' + get.quote + '</p>' + '<p class="source">' + get.source + '</p>';
+  var selectedQuote = getRandomQuote();  
+  var string = '<p class = "quote">' + selectedQuote.quote + '</p>' + '<p class="source">' + selectedQuote.source;
     
-  if(get.citation){ //if citation is true, retrieve
-      string += '<span class="citation">' + get.citation + '</span>';
+  if(selectedQuote.citation){ //if citation is true, retrieve
+      string += '<span class="citation">' + selectedQuote.citation + '</span>';
     }
-      if(get.year){ //if year is true, retrieve
-        string += '<span class="year">' + get.year + '</span>';
+      if(selectedQuote.year){ //if year is true, retrieve
+        string += '<span class="year">' + selectedQuote.year + '</span>';
       }
         string += '</p>'; //if not, its just the string @line 56 + closing 'p' tag
               
