@@ -1,5 +1,5 @@
 //array of quotes
-var famousQuotes = [ 
+var quotes = [ 
   
   {
     quote:'My name is Jeff!', 
@@ -19,7 +19,7 @@ var famousQuotes = [
     quote:'You sit on a throne of lies', 
     source:'Buddy the Elf', 
     citation:'Elf', 
-    year: 2003
+    //year: 2003 commented out to test citation without year
   },
   {
     quote:'Just do it', 
@@ -41,27 +41,27 @@ var famousQuotes = [
 ];
 
 //function generating inclusive 0 to array length of exclusive 6
-function getRandomQuote(quotas){ 
+function getRandomQuote(){ 
   
-  var random = Math.floor(Math.random() * (quotas.length));  
-  return quotas[random]; 
+  var random = Math.floor(Math.random() * (quotes.length));  
+  return quotes[random]; 
   
   
 };
 
-//print function retrieving random object and properties from famousQuotes array and printing to site
-function printQuote(x){
+//print function retrieving random object and properties from quotes array and printing to site
+function printQuote(){
   
-  var get = getRandomQuote(x);  
+  var get = getRandomQuote();  
   var string = '<p class = "quote">' + get.quote + '</p>' + '<p class="source">' + get.source + '</p>';
     
-  if(get.citation){
+  if(get.citation){ //if citation is true, retrieve
       string += '<span class="citation">' + get.citation + '</span>';
     }
-      if(get.year){
+      if(get.year){ //if year is true, retrieve
         string += '<span class="year">' + get.year + '</span>';
       }
-        string += '</p>';
+        string += '</p>'; //if not, by default its just the string @line 56 + closing 'p' tag
               
           document.getElementById('quote-box').innerHTML = string; 
 
@@ -70,7 +70,10 @@ function printQuote(x){
 }; 
 
 
-printQuote(famousQuotes);
+printQuote();
+
+
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
 
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
